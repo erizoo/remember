@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="@+id/email_login_form"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:text="Помню"
+        android:fontFamily="@font/round"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_login_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/email_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_activity_fields_margin"
+            android:layout_marginLeft="@dimen/default_activity_fields_margin"
+            android:layout_marginTop="@dimen/default_activity_fields_margin"
+            android:textColorHint="@color/dark_gray"
+            android:layout_marginEnd="@dimen/default_activity_fields_margin"
+            android:layout_marginRight="@dimen/default_activity_fields_margin"
+            app:layout_constraintTop_toBottomOf="@+id/name_title">
+
+            <AutoCompleteTextView
+                android:id="@+id/login_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login"
+                android:textColor="@drawable/abc"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHighlight="#b1a28c"
+                android:textColorLink="#b1a28c" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_activity_fields_margin"
+            android:layout_marginLeft="@dimen/default_activity_fields_margin"
+            android:layout_marginEnd="@dimen/default_activity_fields_margin"
+            android:textColor="@drawable/abc"
+            android:textColorHint="@color/dark_gray"
+            android:layout_marginRight="@dimen/default_activity_fields_margin"
+            app:layout_constraintTop_toBottomOf="@+id/login_title">
+
+            <AutoCompleteTextView
+                android:id="@+id/password_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:hint="@string/password"
+                android:textColorHint="@color/dark_gray"
+                android:textColorHighlight="@color/dark_gray"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textAlignment="textStart"
+                android:textColor="@drawable/abc" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="#fcfcfc"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/registration"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_login_form" />
+
+    <TextView
+        android:id="@+id/wrong_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/wrong_registration"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register" />
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Или войдите через соцсети:"
+        android:textColor="#b1a28c"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/social_group"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/social_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/fb"
+            android:layout_width="110dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#3B5998"
+            android:src="@mipmap/path" />
+
+        <ImageButton
+            android:id="@+id/vk"
+            android:layout_width="110dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#4C75A3"
+            android:src="@mipmap/vk" />
+
+        <ImageButton
+            android:id="@+id/twitter"
+            android:layout_width="110dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#1DA1F2"
+            android:src="@mipmap/twitter" />
+
+        <ImageButton
+            android:id="@+id/ok"
+            android:layout_width="110dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#ED8112"
+            android:src="@mipmap/odnoklassniki" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

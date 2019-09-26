@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:textColor="#a99175"
+                android:theme="@style/SwitchRemember"
+                android:textSize="14sp"
+                android:text="Включить уведомления" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:text="Дни поминовения"
+                android:textColor="#a99175"
+                android:textColorHighlight="#a99175"
+                android:textColorLink="#a99175" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:checked="true"
+                    android:button="@drawable/radio_button"
+                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Все"
+                    android:textColor="@color/gray"
+                    android:textColorHighlight="@color/gray"
+                    android:textColorLink="@color/gray" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:button="@drawable/radio_button"
+                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Для усопших"
+                    android:textColor="@color/gray"
+                    android:textColorHighlight="@color/gray"
+                    android:textColorLink="@color/gray" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:button="@drawable/radio_button"
+                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Религиозные"
+                    android:textColor="@color/gray"
+                    android:textColorHighlight="@color/gray"
+                    android:textColorLink="@color/gray" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:text="Уведомления"
+                android:textColor="#a99175"
+                android:textColorHighlight="#a99175"
+                android:textColorLink="#a99175" />
+
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                app:ms_popup_padding_left="10dp"
+                app:ms_padding_left="5dp"
+                app:ms_background_color="@android:color/transparent"
+                app:ms_arrow_tint="@color/dark_gray"
+                app:ms_text_color="@color/dark_gray"
+                android:textColorHint="@color/dark_gray"
+                android:hint="Выбрать количество дней..."
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="#b1a28c"
+        android:text="Сохранить"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+</LinearLayout>
