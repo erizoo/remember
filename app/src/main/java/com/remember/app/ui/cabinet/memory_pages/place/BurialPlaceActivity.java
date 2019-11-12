@@ -68,9 +68,16 @@ public class BurialPlaceActivity extends MvpAppCompatActivity implements PopupMa
         responseHandBook = new ResponseHandBook();
 
         isEdit = getIntent().getBooleanExtra("EDIT", false);
+
+        coordinates.setText(getIntent().getStringExtra("COORDS"));
+        city.setText(getIntent().getStringExtra("CITY"));
+        cemetery.setText(getIntent().getStringExtra("CEMETERY"));
+        sector.setText(getIntent().getStringExtra("SPOT_ID"));
+        grave.setText(getIntent().getStringExtra("GRAVE_ID"));
+        sectorPlace.setText(getIntent().getStringExtra("SECTOR"));
+
         if (isEdit) {
             memoryPageModel = getIntent().getParcelableExtra("MODEL");
-            initEdit();
         }
 
         city.setOnClickListener(v -> presenter.getCities());
@@ -83,38 +90,6 @@ public class BurialPlaceActivity extends MvpAppCompatActivity implements PopupMa
         });
     }
 
-    private void initEdit() {
-        try {
-            coordinates.setText(memoryPageModel.getCoords());
-        } catch (NullPointerException e) {
-            coordinates.setText("");
-        }
-        try {
-            city.setText(memoryPageModel.getGorod());
-        } catch (NullPointerException e) {
-            city.setText("");
-        }
-        try {
-            cemetery.setText(memoryPageModel.getNazvaklad());
-        } catch (NullPointerException e) {
-            cemetery.setText("");
-        }
-        try {
-            sector.setText(memoryPageModel.getUchastok());
-        } catch (NullPointerException e) {
-            sector.setText("");
-        }
-        try {
-            grave.setText(memoryPageModel.getNummogil());
-        } catch (NullPointerException e) {
-            grave.setText("");
-        }
-        try {
-            sectorPlace.setText(memoryPageModel.getSector());
-        } catch (NullPointerException e){
-            sectorPlace.setText("");
-        }
-    }
 
     @OnClick(R.id.back)
     public void back() {
